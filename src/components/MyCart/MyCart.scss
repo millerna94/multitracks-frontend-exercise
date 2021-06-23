@@ -1,0 +1,140 @@
+@use "sass:map";
+@use 'src/styles/variables' as var;
+@import 'src/styles/mixins/product-info';
+@import 'src/styles/placeholders/button';
+
+.my-cart {
+  margin: 5rem 1.875rem 0 2.813rem;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  @media only screen and (max-width: map.get(var.$breakpoints, 's')) {
+    margin: 28px 1rem 0 1rem;
+  }
+
+  h1 {
+    line-height: map.get(var.$line-heights, 'xl');
+  }
+
+  ul {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    border-bottom: 1px solid map.get(var.$colors, 'grey', '300');
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+
+    @media only screen and (max-width: map.get(var.$breakpoints, 's')) {
+      &:not(:first-child) {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .row {
+    display: flex;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: map.get(var.$breakpoints, 's')) {
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      gap: 1rem;
+    }
+  }
+
+  .product-info {
+    @include product-info(5.5rem);
+    
+    @media only screen and (max-width: map.get(var.$breakpoints, 's')) {
+      @include product-info(3rem);
+    }
+  }
+
+  .product-type {
+    display: flex;
+    width: 10rem;
+    gap: 0.417rem;
+    align-items: center;
+    color: map.get(var.$colors, 'grey', '400');
+    line-height: 100%;
+  }
+
+  .credits {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    line-height: 150%;
+  }
+
+  .remove-or-save {
+    margin-bottom: 3rem;
+    align-self: flex-end;
+    line-height: map.get(var.$line-heights, 'xl');
+    color: map.get(var.$colors, 'grey', '500');
+    font-weight: normal;
+
+    @media only screen and (max-width: map.get(var.$breakpoints, 's')) {
+      margin-bottom: 1rem;
+    }
+
+    @media only screen and (max-width: 190px) {
+      align-self: flex-start;
+    }
+
+    span {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    span:first-child {
+      margin-right: 0.625rem;
+    }
+    
+    span:last-child {
+      margin-left: 0.625rem;
+    }
+
+    .desktop {
+      @media only screen and (max-width: map.get(var.$breakpoints, 's')) {
+        display: none;
+      }
+    }
+
+    .mobile {
+      button {
+        @extend %button;
+      }
+
+      @media only screen and (min-width: 641px) {
+        display: none;
+      }
+    }
+  }
+
+  .continue-shopping {
+    font-weight: normal;
+    color: #43B1E6;
+    img {
+      font-size: 1rem;
+      padding-left: 5px;
+      padding-right: 9px;
+    }
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    margin-top: 1rem;
+  }
+}

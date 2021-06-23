@@ -1,0 +1,22 @@
+@use "sass:map";
+@use '../variables' as var;
+
+%button {
+  width: 7.813rem;
+  height: 2rem;
+  border: 1px solid map.get(var.$colors, 'grey', '400');
+  box-sizing: border-box;
+  border-radius: 50px;
+  background: none;
+  font-size: 14px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: map.get(var.$colors, 'grey', '400');
+
+  &:hover {
+    color: map.get(var.$colors, 'blue', 'primary');
+    border-color:  map.get(var.$colors, 'blue', 'primary');
+    cursor: pointer;
+  }
+}

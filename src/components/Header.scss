@@ -1,0 +1,82 @@
+@use "sass:map";
+@use 'src/styles/variables' as var;
+
+.header {
+  height: 4.625rem;
+  display: flex;
+  justify-content: center;
+
+  %header-shell {
+    width: 100%;
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid map.get(var.$colors, 'grey', '300');
+  }
+
+  .desktop {
+    @extend %header-shell;
+
+    @media only screen and (max-width: map.get(var.$breakpoints, 's')) {
+      display: none;
+    }
+  }
+  
+  .mobile {
+    @extend %header-shell;
+
+    @media only screen and (min-width: 641px) {
+      display: none;
+    }
+  }
+
+  .end {
+    flex: 1;
+    display: flex;
+  }
+
+  .more {
+    width: 20px;
+    height: 20px;
+    background:
+    radial-gradient(farthest-side,#dadada, 100%, transparent) center left/4px 4px,
+    radial-gradient(farthest-side,#dadada, 100%, transparent) center center/4px 4px,
+    radial-gradient(farthest-side,#dadada, 100%, transparent) center right/4px 4px;
+    background-repeat: no-repeat;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .logo {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .actions {
+    justify-content: flex-end;
+
+    gap: 2rem;
+
+    img {
+      height: 1rem;
+      width: 1rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    @media only screen and (max-width: 316px) {
+      gap: 0.5rem;
+      align-items: flex-end;
+    }
+  }
+
+  .brand-mark {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}

@@ -1,0 +1,41 @@
+@use "sass:map";
+@use 'variables.scss' as var;
+@use 'animations/loading';
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+html,
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: map.get(var.$font-weights, 'bold');
+  font-style: normal;
+
+  button {
+    font-family: 'Lato', sans-serif;
+    font-weight: map.get(var.$font-weights, 'bold');
+    line-height: 100%;
+    border: none;
+    letter-spacing: 0.02rem;
+  }
+
+  h1 {
+    font-size: 2.063rem;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.438rem;
+    margin: 0;
+  }
+
+  h4 {
+    margin: 0;
+    margin-bottom: 0.625rem;
+    color: map.get(var.$colors, 'grey', '100');
+    line-height: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: map.get(var.$font-weights, 'regular');
+    font-feature-settings: 'pnum' on, 'lnum' on, 'liga' off;
+  }
+}

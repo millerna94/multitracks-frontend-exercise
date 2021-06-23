@@ -1,0 +1,51 @@
+@mixin product-info($imgSize) {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-basis: 16rem;
+
+  @media only screen and (max-width: map.get(var.$breakpoints, 's')) {
+    flex-basis: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .album-artwork {
+    height: $imgSize;
+    width: $imgSize;
+
+    img {
+      height: $imgSize;
+      width: $imgSize;
+      border: 0.031rem solid #f1f2f3;
+      box-sizing: border-box;
+      border-radius: 0.275rem;
+    }
+  }
+
+  .song-title-and-artist {
+    @media only screen and (max-width: map.get(var.$breakpoints, 's')) {
+      font-size: 14px;
+    }
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .song-title {
+    line-height: 125%;
+  }
+  
+  .artist {
+    color: map.get(var.$colors, 'grey', '500');
+    line-height: map.get(var.$line-heights, 'xl');
+    font-weight: normal;
+  }
+
+  .close-icon {
+    display: none;
+    @media only screen and (max-width: map.get(var.$breakpoints, 's')) {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+$colors: (
+  'grey': (
+    '100': #fff,
+    '200': #fafafa,
+    '300': #dadada,
+    '400': #919191,
+    '500': #828282,
+    '600': #5c5c5c,
+    '700': #282828,
+    '900': #000000
+  ),
+  'blue': (
+    'primary': #43B1E6,
+    'dark': #3996c3
+  ),
+  'background': (
+    'base': #e5e5e5,
+    'light': #fafafa,
+    'dark': #282828,
+    'focused': #1c1c1c,
+    'extraDark': #171717
+  )
+);
+
+$font-weights: ('regular': 400, 'bold': 700);
+
+$font-sizes: ('xs': 0.5rem, 's': 0.875rem, 'm': 1rem, 'l': 1.25rem, 'xl': 1.5rem);
+
+$line-heights: ('m': 1rem, 'l': 1.25rem, 'xl': 1.5rem);
+
+$breakpoints: ('xs': 26rem, 's': 40rem, 'm': 794px, 'l': 64rem);
